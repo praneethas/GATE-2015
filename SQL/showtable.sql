@@ -1,0 +1,2 @@
+SELECT DATABASE db;
+DESC db;

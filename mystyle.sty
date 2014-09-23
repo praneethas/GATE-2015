@@ -1,0 +1,224 @@
+\ProvidesPackage{mystyle}
+\usepackage[a4paper,bindingoffset=0.2in,inner=1.5cm,outer=4.5cm,top=1.5in,bottom=1.5in,marginparwidth=3.5cm, marginparsep=0.5cm]{geometry}
+ \usepackage{url}
+ \usepackage{rotating}
+ \usepackage{todonotes}
+ \usepackage{imakeidx}
+ \makeindex[intoc]
+ %\newcommand{\Index}[1]{\index{#1|textbf}}
+ %\newcommand{\IndexRef}[2]{\index{#1|see {#2}}}
+ \usepackage{graphicx}
+ \usepackage{marginnote}
+ \usepackage{amssymb}
+\usepackage[numbered]{bookmark}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{DarkGray}{gray}{0.0}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+	%bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={GATE 2015},    % title
+    pdfauthor={Praneeth A S},     % author
+    pdfsubject={GATE},   % subject of the document
+    pdfcreator={MiTex 2.9},   % creator of the document
+    pdfproducer={LaTex}, % producer of the document
+    pdfkeywords={GATE} {CSE} {2015}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan,           % color of external links
+    %linkbordercolor	=white	%color of frame around internal links (if colorlinks=false)
+    %citebordercolor	=white, %	color of frame around citations
+    %urlbordercolor	=white
+}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\algsetup{
+linenosize=\small,
+linenodelimiter=.,
+indent=2em
+}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{\hfill // #1}
+\usepackage{amsmath}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usepackage{xcolor}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{0.44\textwidth}{ #3}}}%#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{inconsolata}
+\usepackage{listings}
+\lstset{
+language=C++,
+%frame = single,
+basicstyle=\sffamily,
+backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+%keywordstyle=\color{javapurple}\sffamily, %bfseries
+%stringstyle=\color{javared},
+%commentstyle=\color{javagreen},
+%morecomment=[s][\color{javadocblue}]{/**}{*/},
+%keywordstyle=\color[rgb]{0,0,1},
+keywordstyle=\color[RGB]{255,20,147},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+    %stringstyle=\color[rgb]{0.627,0.126,0.941},
+stringstyle=\color[RGB]{0,0,255},
+morecomment=[s][\color{javadocblue}]{/*}{*/},
+morestring=[d][\color{blue}]',
+identifierstyle=\color[RGB]{0,150,255},
+moredelim=[s][\sffamily]{<}{>},
+%backgroundcolor=\color{black}, 
+%keywordstyle=\color[RGB]{0,255,0},
+%commentstyle=\color[rgb]{0.133,0.545,0.133},
+%stringstyle=\color[RGB]{255,255,0},
+%morecomment=[s][\color{javadocblue}]{/**}{*/},
+%numbers=left,
+%numberstyle=\color{black},
+%stepnumber=1,
+%numbersep=10pt,
+tabsize=4,
+showspaces=false,
+columns=fullflexible,
+showstringspaces=false
+%frame=single,           % adds a frame around the code
+captionpos=t,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+%frame=shadowbox, rulesepcolor=\color{blue},
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\sffamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\usepackage[]{minted}
+%\usemintedstyle{fruity}
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}%
+\AfterEndEnvironment{minted}{\end{tcolorbox}}%
+\newmintedfile{cpp}{
+  linenos=true,
+  bgcolor=bg,
+  fontsize=auto,
+  fontseries=m,
+  frame=single,
+  framesep=0.5cm,
+  obeytabs,
+  mathescape=true,
+  texcl=true,
+  %samepage=true,
+  samepage=false,
+  tabsize=4,
+  %firstnumber=1,
+  %stepnumber=5
+}
+\newmintedfile{c}{
+  linenos=true,
+  bgcolor=bg,
+  fontsize=auto,
+  fontseries=m,
+  frame=single,
+  framesep=0.5cm,
+  obeytabs,
+  mathescape=true,
+  texcl=true,
+  %samepage=true,
+  samepage=false,
+  tabsize=4,
+  %firstnumber=1,
+  %stepnumber=5
+}
+\newmintedfile{java}{
+  linenos=true,
+  fontsize=auto,
+  fontseries=m,
+  samepage=false,
+  tabsize=4,
+  firstnumber=1,
+  stepnumber=2
+}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{lipsum}
+\mdfdefinestyle{MyFrame}{%
+    %linecolor=blue,
+    outerlinewidth=0.25pt,
+    %roundcorner=20pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=bg
+}
+\renewcommand*{\lstlistingname}{NewListing}
+\usepackage{amsthm}
+\newtheoremstyle{mydef}
+{\topsep}{\topsep}%
+{}{}%
+{\bfseries}{}
+{\newline}
+{%
+
+  %\rule{\textwidth}{0.4pt}\\*%
+  \thmname{#1}~\thmnumber{#2}\thmnote{\ -\ #3}.\\*[-1.5ex]%
+  %\rule{\textwidth}{0.4pt}}%
+}
+\theoremstyle{mydef}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{corollary}{Corollary}[theorem]
+     
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead[LE,LO]{\nouppercase{\bfseries{\leftmark}}}
+\fancyhead[RE,RO]{\nouppercase{\bfseries{\rightmark}}}
+%\fancyhead[RE,RO]{\thepage}
+%\fancyfoot[LO,RE]{Jane Doe}
+\fancyfoot[CE,CO]{\thepage}
+%\fancyfoot[LE,RO]{\thepage}
+\usepackage{multirow}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[T1]{fontenc} % For HTML part
+\newmintedfile[CFile]{c}{
+  linenos=true,
+  bgcolor=DarkGray,
+  fontsize=auto,
+  fontseries=m,
+  %frame=single,
+  %framesep=0.5cm,
+  obeytabs,
+  mathescape=true,
+  texcl=true,
+  samepage=true,
+  %samepage=false,
+  tabsize=4,
+  %firstnumber=1,
+  %stepnumber=5
+}
+ \newcommand{\CFiles}[1]{\CFile{#1}}
+ \renewcommand{\theFancyVerbLine}{\rmfamily \textcolor[rgb]{0.5,0.5,1.0}{\normalsize \oldstylenums{\arabic{FancyVerbLine}}}}
